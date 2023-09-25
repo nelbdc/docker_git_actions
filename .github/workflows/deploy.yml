@@ -15,10 +15,11 @@ jobs:
     container:
       image: node:18
     services:
-      mongodb: mongo
-      env: 
-        MONGO_INITDB_ROOT_USERNAME:root
-        MONGO_INITDB_ROOT_PASSWORD:example
+      mongodb:
+        image: mongo
+        env:
+          MONGO_INITDB_ROOT_USERNAME: root
+          MONGO_INITDB_ROOT_PASSWORD: example
     env:
       MONGODB_CONNECTION_PROTOCOL: mongodb+srv
       MONGODB_CLUSTER_ADDRESS: db0.mcgx82i.mongodb.net
