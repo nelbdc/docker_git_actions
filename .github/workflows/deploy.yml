@@ -20,6 +20,8 @@ jobs:
         env:
           MONGO_INITDB_ROOT_USERNAME: root
           MONGO_INITDB_ROOT_PASSWORD: example
+        ports:
+          - 27017:27017
     env:
       MONGODB_CONNECTION_PROTOCOL: mongodb+srv
       MONGODB_CLUSTER_ADDRESS: db0.mcgx82i.mongodb.net
@@ -32,7 +34,7 @@ jobs:
         run: |
           echo "MONGODB_USERNAME=root" >> "$GITHUB_ENV"
           echo "MONGODB_PASSWORD=example" >> "$GITHUB_ENV"
-          echo "MONGODB_CLUSTER_ADDRESS=mongodb" >> "$GITHUB_ENV"
+          echo "MONGODB_CLUSTER_ADDRESS=127.0.0.1:27017" >> "$GITHUB_ENV"
           echo "MONGODB_CONNECTION_PROTOCOL=mongodb" >> "$GITHUB_ENV"
       - name: Get Code
         uses: actions/checkout@v4
