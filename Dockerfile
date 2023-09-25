@@ -1,0 +1,17 @@
+FROM node:16
+
+ENV MONGODB_CONNECTION_PROTOCOL mongodb+srv
+ENV MONGODB_DB_NAME db0
+ENV MONGODB_CLUSTER_ADDRESS db0.mcgx82i.mongodb.net
+ENV MONGODB_USERNAME nelson
+ENV MONGODB_PASSWORD 4YHCOP2sAZ9IU5yI
+
+WORKDIR /app
+
+COPY package*.json .
+
+RUN npm install
+
+COPY . .
+
+CMD ["npm", "start"]
